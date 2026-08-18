@@ -194,6 +194,26 @@
   </div>
 </section>
 
+<!-- ================= GAME SPOTLIGHT ================= -->
+<section class="game-spotlight" id="game-spotlight" aria-label="Classroom Story">
+  <div class="game-spotlight-grid">
+    <div class="game-spotlight-photo">
+      <span class="game-spotlight-tag">🎮 GAME</span>
+      <div class="game-spotlight-frame">
+        <img src="assets/classroom-story-cover.png" alt="Classroom Story — game Godot">
+        <div class="game-spotlight-glow"></div>
+      </div>
+    </div>
+    <div class="game-spotlight-copy">
+      <p class="eyebrow">Game #1</p>
+      <h3>Classroom Story</h3>
+      <p>Petualangan pixel-art yang kamu buat di Godot. Masuk ke dunia kelas, jelajahi lingkungan, dan mainkan game langsung dari Science Universe.</p>
+      <div class="game-spotlight-meta"><span>Godot Web</span><span>Pixel Adventure</span><span>Landscape</span></div>
+      <button class="btn game-play-home" id="gamePlayHome" type="button">▶ PLAY CLASSROOM STORY</button>
+    </div>
+  </div>
+</section>
+
 <!-- ================= BIOLOGI ================= -->
 <section class="subject reverse" id="biologi" style="--sub-color:var(--biology)">
   <div class="subject-grid">
@@ -347,6 +367,21 @@
         <p>Naikkan level dengan menyelesaikan tantangan dan kuis seputar Matematika, Fisika, Kimia, dan Biologi.</p>
       </div>
 
+      <section class="godot-launcher" aria-label="Classroom Story">
+        <div class="godot-launcher-head">
+          <div>
+            <span class="godot-kicker">GODOT WEB</span>
+            <h3>Classroom Story</h3>
+            <p>Game Godot kamu sekarang langsung terhubung ke halaman Mini Game ini.</p>
+          </div>
+          <button class="btn godot-start-btn" id="godotStartBtn" type="button">▶ Mulai Game</button>
+        </div>
+        <div class="godot-status" id="godotStatus">Belum dimuat — tekan Mulai Game untuk menjalankan.</div>
+        <div class="godot-frame-wrap" id="godotFrameWrap" hidden>
+          <iframe id="godotFrame" title="Classroom Story" allow="autoplay; fullscreen; gamepad; microphone" allowfullscreen></iframe>
+        </div>
+      </section>
+
     <div class="card-grid">
       <div class="rpg-card">
         <input type="file" id="photoFileInput" accept="image/*" style="display:none">
@@ -378,8 +413,6 @@
           <button type="button" data-cat="all" class="active">Semua</button>
           <button type="button" data-cat="Matematika">Matematika</button>
           <button type="button" data-cat="Fisika">Fisika</button>
-          <button type="button" data-cat="Kimia">Kimia</button>
-          <button type="button" data-cat="Biologi">Biologi</button>
         </div>
         <button class="btn" id="quizStartBtn">▶ Main Kuis</button>
       </div>
@@ -392,25 +425,25 @@
 
     <div class="section-title">🎮 Pilih Mini Game</div>
     <div class="picker-grid" id="gamePicker">
-      <div class="picker-card" data-game="Matematika" role="button" tabindex="0">
+      <div class="picker-card locked">
         <div class="picker-icon">🧮</div>
         <div class="picker-name">Kuis Matematika</div>
-        <span class="play-pill">Main</span>
+        <span class="play-pill">Segera</span>
       </div>
-      <div class="picker-card" data-game="Fisika" role="button" tabindex="0">
+      <div class="picker-card locked">
         <div class="picker-icon">⚛</div>
         <div class="picker-name">Kuis Fisika</div>
-        <span class="play-pill">Main</span>
+        <span class="play-pill">Segera</span>
       </div>
-      <div class="picker-card" data-game="Kimia" role="button" tabindex="0">
+      <div class="picker-card locked">
         <div class="picker-icon">⚗</div>
         <div class="picker-name">Kuis Kimia</div>
-        <span class="play-pill">Main</span>
+        <span class="play-pill">Segera</span>
       </div>
-      <div class="picker-card" data-game="Biologi" role="button" tabindex="0">
+      <div class="picker-card locked">
         <div class="picker-icon">⌬</div>
         <div class="picker-name">Kuis Biologi</div>
-        <span class="play-pill">Main</span>
+        <span class="play-pill">Segera</span>
       </div>
     </div>
     </div><!-- /game-frame -->
@@ -424,11 +457,11 @@
     <h2>Tentang Halaman Ini</h2>
     <div class="about-meta">
       <span>Update <strong>18 Agustus 2026</strong></span>
-      <span>Versi <strong>1.3</strong></span>
+      <span>Versi <strong>1.2</strong></span>
     </div>
     <p>Science Universe adalah ruang belajar interaktif untuk materi TKA MIPA — Matematika, Fisika, Kimia, dan Biologi. Di halaman utama kamu bisa mengenal cabang ilmu beserta tokoh kuncinya, sementara di halaman Materi tersedia ringkasan topik TKA yang bisa dibaca bertahap.</p>
     <p>Ada juga <strong>Mini Game</strong> yang membuat proses belajar lebih seru lewat level, skill points, dan kuis singkat bertema MIPA.</p>
-    <p>Halaman ini masih dalam tahap pengembangan. Mini Game (Kuis Matematika, Fisika, Kimia, Biologi) sudah bisa dimainkan — dapatkan XP, naik level, dan kumpulkan skill points!</p>
+    <p>Halaman ini masih dalam tahap pengembangan. Beberapa fitur, termasuk kuis dan game, terus dilengkapi dari waktu ke waktu.</p>
 
     <div class="settings-block">
       <h3>Tim</h3>
