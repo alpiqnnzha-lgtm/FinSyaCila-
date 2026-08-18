@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Science Universe — Syifa Syauqillah Ramadani</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Literata:ital,opsz,wght@0,18..144,400;0,18..144,500;0,18..144,600;1,18..144,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="starfield"></canvas>
+
+<!-- ================= NAVBAR ================= -->
+<nav id="navbar">
+  <div class="nav-links" id="navLinks">
+    <button data-page="home" class="active" aria-label="Home" title="Home">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5v9a1.5 1.5 0 0 1-1.5 1.5H4.5A1.5 1.5 0 0 1 3 19.5z"/><path d="M9 21v-6h6v6"/></svg>
+      <span>Home</span>
+    </button>
+    <button data-page="materi" class="materi-link" aria-label="Materi" title="Materi">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16.5A1.5 1.5 0 0 1 18.5 21H6.5A2.5 2.5 0 0 0 4 23z"/><path d="M4 5.5v13A2.5 2.5 0 0 1 6.5 16H20"/><path d="M8 7h8M8 10.5h7"/></svg>
+      <span>Materi</span>
+    </button>
+    <button data-page="game" class="game-link" aria-label="Mini Game" title="Mini Game">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 9h10a5 5 0 0 1 4.8 6.4l-1 3.2a2 2 0 0 1-3.4.8l-2.1-2.4H8.7l-2.1 2.4a2 2 0 0 1-3.4-.8l-1-3.2A5 5 0 0 1 7 9z"/><path d="M7 12v4M5 14h4M16.5 13.5h.01M19 16h.01"/></svg>
+      <span>Game</span>
+    </button>
+    <button data-page="about" aria-label="About" title="About">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 21a7 7 0 0 1 14 0"/><path d="M19 4.5 21 6l-2 1.5"/></svg>
+      <span>About</span>
+    </button>
+    <button data-page="settings" aria-label="Setting" title="Setting">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-1.8 1.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V20h-2.5v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1-1.8-1.8.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H6v-2.5h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1L9 6.7l.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.5V5h2.5v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1 1.8 1.8-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.5 1h.1v2.5h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+      <span>Setting</span>
+    </button>
+  </div>
+</nav>
+
+<!-- ================= PAGE: HOME ================= -->
+<div class="page active" id="page-home">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero">
+  <div class="hero-blob b1"></div>
+  <div class="hero-blob b2"></div>
+  <div class="hero-blob b3"></div>
+
+  <div class="hero-inner" id="heroInner">
+
+    <div class="formula-badge" data-fx style="color:var(--math)">a² + b² = c²</div>
+    <div class="formula-badge" data-fx style="color:var(--physics)">E = mc²</div>
+    <div class="formula-badge" data-fx style="color:var(--chemistry)">2H₂ + O₂ → 2H₂O</div>
+    <div class="formula-badge" data-fx style="color:var(--biology)">DNA · ATCG</div>
+    <div class="formula-badge" data-fx style="color:var(--gold)">∫ f(x) dx</div>
+    <div class="formula-badge" data-fx style="color:var(--physics)">F = m·a</div>
+
+    <div class="flip-card" id="flipCard">
+      <div class="flip-face front">
+        <h1>FinSyaCila</h1>
+        <div class="sub">Tugas TKA · MIPA</div>
+      </div>
+      <div class="flip-face back">
+        <h1>SCIENCE UNIVERSE</h1>
+        <div class="sub">Matematika · Fisika · Kimia · Biologi</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="hero-scroll-cue">
+    <span>Scroll</span>
+    <span class="line"></span>
+  </div>
+</section>
+
+<!-- ================= PROFILE ================= -->
+<section class="section profile" id="profile">
+  <div class="profile-photo-wrap">
+    <div class="profile-photo-ring"></div>
+    <div class="profile-photo">
+      <img id="profilePhotoImg" src="assets/profile-syifa.webp" alt="Foto Syifa Syauqillah Ramadani">
+    </div>
+  </div>
+
+  <p class="eyebrow">Penjelajah MIPA</p>
+  <h2>Syifa Syauqillah Ramadani</h2>
+  <p>Menyusun konsep dan ringkasan materi TKA MIPA agar lebih mudah dipahami. Di halaman ini empat cabang ilmu — Matematika, Fisika, Kimia, dan Biologi — dikenalkan lewat tokoh kunci, ide utama, dan topik yang sering muncul di ujian.</p>
+
+  <div class="profile-tags">
+    <span>Matematika</span>
+    <span>Fisika</span>
+    <span>Kimia</span>
+    <span>Biologi</span>
+  </div>
+</section>
+
+<!-- ================= MATEMATIKA ================= -->
+<section class="subject" id="matematika" style="--sub-color:var(--math)">
+  <div class="subject-grid">
+    <div class="specimen" style="--tilt:-4deg">
+      <span class="specimen-tag">∑ Matematika</span>
+      <div class="specimen-frame">
+        <img src="assets/specimen-matematika.webp" alt="Ilustrasi cabang-cabang matematika">
+      </div>
+    </div>
+    <div class="subject-text">
+      <p class="eyebrow">Cabang Ilmu #1</p>
+      <h3>Matematika</h3>
+      <div class="fact-block">
+        <span class="fact-label">Fungsi</span>
+        <p>Bahasa logika untuk berhitung, mengukur, dan memprediksi. Dari menghitung luas tanah, membangun jembatan, mengatur keuangan, sampai menjadi fondasi algoritma di balik setiap aplikasi dan game yang kita pakai sehari-hari.</p>
+      </div>
+      <div class="fact-block">
+        <span class="fact-label">Tokoh Kunci</span>
+        <ul>
+          <li><b>Al-Khawarizmi</b> — peletak dasar aljabar; kata "algoritma" berasal dari namanya.</li>
+          <li><b>Pythagoras</b> — teorema hubungan sisi pada segitiga siku-siku.</li>
+          <li><b>Newton &amp; Leibniz</b> — mengembangkan kalkulus secara terpisah di abad ke-17.</li>
+        </ul>
+      </div>
+      <div class="fact-block">
+        <span class="fact-label">Sejarah Singkat</span>
+        <p>Bermula dari Babilonia dan Mesir Kuno yang menghitung pajak dan luas tanah, berkembang lewat geometri Yunani, diperkaya dunia Islam abad pertengahan lewat aljabar, hingga kalkulus modern yang membuka jalan bagi fisika dan teknik.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FISIKA ================= -->
+<section class="subject reverse" id="fisika" style="--sub-color:var(--physics)">
+  <div class="subject-grid">
+    <div class="specimen" style="--tilt:3deg">
+      <span class="specimen-tag">⚛ Fisika</span>
+      <div class="specimen-frame">
+        <img src="assets/specimen-fisika.webp" alt="Rumus dan diagram fisika di papan tulis">
+      </div>
+    </div>
+    <div class="subject-text">
+      <p class="eyebrow">Cabang Ilmu #2</p>
+      <h3>Fisika</h3>
+      <div class="fact-block">
+        <span class="fact-label">Fungsi</span>
+        <p>Mempelajari materi, energi, gaya, dan gerak. Hampir semua teknologi yang kita pakai — listrik, mesin, ponsel, sampai roket ke luar angkasa — berdiri di atas hukum-hukum fisika.</p>
+      </div>
+      <div class="fact-block">
+        <span class="fact-label">Tokoh Kunci</span>
+        <ul>
+          <li><b>Isaac Newton</b> — hukum gerak dan gravitasi universal.</li>
+          <li><b>Michael Faraday</b> — induksi elektromagnetik, dasar listrik modern.</li>
+          <li><b>Albert Einstein</b> — teori relativitas dan E = mc².</li>
+        </ul>
+      </div>
+      <div class="fact-block">
+        <span class="fact-label">Sejarah Singkat</span>
+        <p>Berawal dari pengamatan filsuf Yunani Kuno, memasuki babak ilmiah lewat hukum gerak Newton abad ke-17, berkembang pesat lewat elektromagnetik di abad ke-19, lalu direvolusi relativitas dan fisika kuantum di awal abad ke-20.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KIMIA ================= -->
+<section class="subject" id="kimia" style="--sub-color:var(--chemistry)">
+  <div class="subject-grid">
+    <div class="specimen" style="--tilt:-3deg">
+      <span class="specimen-tag">⚗ Kimia</span>
+      <div class="specimen-frame">
+        <img src="assets/specimen-kimia.webp" alt="Rumus dan struktur molekul kimia di papan tulis">
+      </div>
+    </div>
+    <div class="subject-text">
+      <p class="eyebrow">Cabang Ilmu #3</p>
+      <h3>Kimia</h3>
+      <div class="fact-block">
+        <span class="fact-label">Fungsi</span>
+        <p>Mempelajari struktur, sifat, dan perubahan zat. Jadi dasar farmasi, industri material, energi, sampai hal-hal sederhana seperti sabun, pupuk, dan makanan yang kita konsumsi setiap hari.</p>
+      </div>
+      <div class="fact-block">
+        <span class="fact-label">Tokoh Kunci</span>
+        <ul>
+          <li><b>Antoine Lavoisier</b> — bapak kimia modern, hukum kekekalan massa.</li>
+          <li><b>John Dalton</b> — merumuskan teori atom modern.</li>
+          <li><b>Dmitri Mendeleev</b> — menyusun tabel periodik unsur (1869).</li>
+        </ul>
+      </div>
+      <div class="fact-block">
+        <span class="fact-label">Sejarah Singkat</span>
+        <p>Berakar dari alkimia kuno di Mesir dan dunia Arab yang mencoba mengubah logam biasa jadi emas, diubah menjadi ilmu sistematis oleh Lavoisier di akhir abad ke-18, hingga Mendeleev menyusun tabel periodik yang masih dipakai sampai sekarang.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BIOLOGI ================= -->
+<section class="subject reverse" id="biologi" style="--sub-color:var(--biology)">
+  <div class="subject-grid">
+    <div class="specimen" style="--tilt:4deg">
+      <span class="specimen-tag">⌬ Biologi</span>
+      <div class="specimen-frame">
+        <img src="assets/specimen-biologi.webp" alt="Ilustrasi anatomi vintage untuk biologi">
+      </div>
+    </div>
+    <div class="subject-text">
+      <p class="eyebrow">Cabang Ilmu #4</p>
+      <h3>Biologi</h3>
+      <div class="fact-block">
+        <span class="fact-label">Fungsi</span>
+        <p>Mempelajari makhluk hidup — struktur tubuh, proses kehidupan, hingga evolusi. Jadi fondasi kedokteran, pertanian, dan bioteknologi, dari vaksin sampai rekayasa genetika.</p>
+      </div>
+      <div class="fact-block">
+        <span class="fact-label">Tokoh Kunci</span>
+        <ul>
+          <li><b>Andreas Vesalius</b> — merombak pemahaman anatomi manusia lewat pembedahan langsung.</li>
+          <li><b>Gregor Mendel</b> — bapak genetika lewat percobaan kacang polong.</li>
+          <li><b>Charles Darwin</b> — teori evolusi lewat seleksi alam.</li>
+        </ul>
+      </div>
+      <div class="fact-block">
+        <span class="fact-label">Sejarah Singkat</span>
+        <p>Dimulai dari pengamatan Aristoteles tentang makhluk hidup, direvolusi Vesalius lewat studi anatomi abad ke-16, ditemukannya dunia mikroorganisme oleh Leeuwenhoek lewat mikroskop, hingga genetika Mendel dan evolusi Darwin di abad ke-19.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTINUE ================= -->
+<section class="section" style="padding-top:0;padding-bottom:2rem">
+  <div class="continue-card hidden" id="continueCard">
+    <p id="continueText">Lanjutkan materi terakhir</p>
+    <button type="button" class="btn" id="continueBtn">▶ Lanjut belajar</button>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<section class="footer">
+  <div class="footer-constellation">
+    <span>∑</span><span>⚛</span><span>⚗</span><span>⌬</span>
+  </div>
+  <h4>Semesta yang Terus Dipelajari</h4>
+  <p>Empat cabang ilmu, satu rasa penasaran yang sama. Terima kasih sudah menyusuri Science Universe sampai akhir.</p>
+  <div class="signature"></div>
+</section>
+
+</div><!-- /page-home -->
+
+<!-- ================= PAGE: MATERI TKA ================= -->
+<div class="page" id="page-materi">
+  <div class="materi-page">
+    <div class="materi-hero-row">
+      <div class="materi-head">
+        <p class="eyebrow">Pembelajaran</p>
+        <h2>Materi <span class="accent">TKA</span></h2>
+        <p>Geser kartu untuk memilih bidang. Kartu tengah adalah materi aktif — kartu kiri-kanan jadi pratinjau. Tekan putar untuk membuka daftar topik lengkap, atau pilih dari deretan bawah.</p>
+      </div>
+      <div class="materi-preview" id="materiPreview">
+        <img src="" alt="Pratinjau materi">
+      </div>
+    </div>
+
+    <div class="tka-carousel" id="tkaCarousel">
+      <div class="tka-track" id="tkaTrack">
+<article class="tka-card" data-index="0" data-title="Matematika">
+        <div class="art">
+          <img src="assets/materi-matematika.webp" alt="Matematika">
+          <div class="shade"></div>
+          <div class="meta"><span class="tag">Materi TKA</span><strong>Matematika</strong></div>
+        </div>
+      </article>
+<article class="tka-card" data-index="1" data-title="Bahasa Indonesia">
+        <div class="art">
+          <img src="assets/materi-bahasa-indonesia.webp" alt="Bahasa Indonesia">
+          <div class="shade"></div>
+          <div class="meta"><span class="tag">Materi TKA</span><strong>Bahasa Indonesia</strong></div>
+        </div>
+      </article>
+<article class="tka-card" data-index="2" data-title="Bahasa Inggris">
+        <div class="art">
+          <img src="assets/materi-bahasa-inggris.webp" alt="Bahasa Inggris">
+          <div class="shade"></div>
+          <div class="meta"><span class="tag">Materi TKA</span><strong>Bahasa Inggris</strong></div>
+        </div>
+      </article>
+<article class="tka-card" data-index="3" data-title="Fisika">
+        <div class="art">
+          <img src="assets/materi-fisika.webp" alt="Fisika">
+          <div class="shade"></div>
+          <div class="meta"><span class="tag">Materi TKA</span><strong>Fisika</strong></div>
+        </div>
+      </article>
+<article class="tka-card" data-index="4" data-title="Matematika Tingkat Lanjut">
+        <div class="art">
+          <img src="assets/materi-matematika-tingkat-lanjut.webp" alt="Matematika Tingkat Lanjut">
+          <div class="shade"></div>
+          <div class="meta"><span class="tag">Materi TKA</span><strong>Matematika Tingkat Lanjut</strong></div>
+        </div>
+      </article>
+      </div>
+      <div class="tka-actions">
+        <button class="tka-play" id="tkaPlay" type="button" aria-label="Buka materi">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13L19 12z"></path></svg>
+        </button>
+        <button class="tka-viewall" id="tkaViewAll" type="button">View All →</button>
+      </div>
+      <div class="tka-dots" id="tkaDots" aria-label="Pilih materi"></div>
+      <div class="tka-thumbs" id="tkaThumbs" aria-label="Pratinjau cepat"></div>
+    </div>
+  </div>
+</div><!-- /page-materi -->
+
+<div class="materi-detail" id="materiDetail" aria-hidden="true">
+  <div class="materi-panel" role="dialog" aria-modal="true" aria-labelledby="materiDetailTitle">
+    <div class="materi-reader-scroll">
+      <section class="materi-reader-hero">
+        <img id="materiDetailImage" alt="">
+        <button class="materi-reader-close" id="materiClose" type="button" aria-label="Kembali ke pilihan materi"><span aria-hidden="true">←</span><span>Kembali</span></button>
+        <div class="materi-reader-hero-content">
+          <p class="eyebrow" style="color:#fff">Materi TKA</p>
+          <h3 id="materiDetailTitle">Materi TKA</h3>
+          <div class="detail-sub" id="materiDetailSub">Materi pembelajaran</div>
+        </div>
+      </section>
+      <main class="materi-reader-body">
+        <p class="materi-reader-intro" id="materiDetailIntro">Baca materi secara bertahap. Gulir ke bawah untuk mempelajari seluruh topik.</p>
+        <div class="materi-list" id="materiList"></div>
+      </main>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PAGE: GAME (SOLO LEVELING SYSTEM) ================= -->
+<div class="page" id="page-game">
+  <div class="game-page">
+    <div class="game-frame">
+      <span class="corner tl"></span><span class="corner tr"></span>
+      <span class="corner bl"></span><span class="corner br"></span>
+
+      <div class="ornate-title">
+        <div class="glyphs">✦ ─────────── ✦</div>
+        <h2>Mini Game</h2>
+        <span class="pill">Mini Game &amp; Habit Tracker</span>
+      </div>
+
+      <div class="game-hero">
+        <p>Naikkan level dengan menyelesaikan tantangan dan kuis seputar Matematika, Fisika, Kimia, dan Biologi.</p>
+      </div>
+
+    <div class="card-grid">
+      <div class="rpg-card">
+        <input type="file" id="photoFileInput" accept="image/*" style="display:none">
+        <div class="avatar-ring-wrap" id="gameAvatarWrap" title="Ganti foto profil">
+          <div class="avatar-ring"></div>
+          <div class="avatar-edit-hint">Ganti</div>
+          <div class="avatar-circle" id="gameAvatar"><img src="assets/avatar-default.png" alt="Avatar"></div>
+        </div>
+        <h4 style="justify-content:center"><span class="ic">◆</span> Level 1</h4>
+        <div class="stat-row"><span>XP</span><span>0 / 100</span></div>
+        <div class="bar"><span style="width:0%"></span></div>
+        <div class="streak-badge" id="streakBadge">🔥 Streak 0</div>
+      </div>
+      <div class="rpg-card skill-card">
+        <h4><span class="ic">✦</span> Skill Points</h4>
+        <div class="stat-row"><span>Matematika</span><span>0</span></div>
+        <div class="bar"><span style="width:0%"></span></div>
+        <div class="stat-row"><span>Fisika</span><span>0</span></div>
+        <div class="bar"><span style="width:0%"></span></div>
+        <div class="stat-row"><span>Kimia</span><span>0</span></div>
+        <div class="bar"><span style="width:0%"></span></div>
+        <div class="stat-row"><span>Biologi</span><span>0</span></div>
+        <div class="bar"><span style="width:0%"></span></div>
+      </div>
+      <div class="rpg-card quiz-card">
+        <h4><span class="ic">❓</span> Kuis</h4>
+        <p>Pilih mapel, lalu kerjakan 5 soal. XP dan streak tersimpan di perangkatmu.</p>
+        <div class="quiz-filter" id="quizFilter">
+          <button type="button" data-cat="all" class="active">Semua</button>
+          <button type="button" data-cat="Matematika">Matematika</button>
+          <button type="button" data-cat="Fisika">Fisika</button>
+        </div>
+        <button class="btn" id="quizStartBtn">▶ Main Kuis</button>
+      </div>
+      <div class="rpg-card quiz-card">
+        <h4><span class="ic">🎯</span> Daily Challenge</h4>
+        <p id="dailyStatus">Belum dikerjakan hari ini</p>
+        <button class="btn" id="dailyStartBtn">▶ Kerjakan Hari Ini</button>
+      </div>
+    </div>
+
+    <div class="section-title">🎮 Pilih Mini Game</div>
+    <div class="picker-grid" id="gamePicker">
+      <div class="picker-card locked">
+        <div class="picker-icon">🧮</div>
+        <div class="picker-name">Kuis Matematika</div>
+        <span class="play-pill">Segera</span>
+      </div>
+      <div class="picker-card locked">
+        <div class="picker-icon">⚛</div>
+        <div class="picker-name">Kuis Fisika</div>
+        <span class="play-pill">Segera</span>
+      </div>
+      <div class="picker-card locked">
+        <div class="picker-icon">⚗</div>
+        <div class="picker-name">Kuis Kimia</div>
+        <span class="play-pill">Segera</span>
+      </div>
+      <div class="picker-card locked">
+        <div class="picker-icon">⌬</div>
+        <div class="picker-name">Kuis Biologi</div>
+        <span class="play-pill">Segera</span>
+      </div>
+    </div>
+    </div><!-- /game-frame -->
+  </div>
+</div><!-- /page-game -->
+
+<!-- ================= PAGE: ABOUT ================= -->
+<div class="page" id="page-about">
+  <div class="simple-page">
+    <p class="eyebrow">Tentang</p>
+    <h2>Tentang Halaman Ini</h2>
+    <div class="about-meta">
+      <span>Update <strong>18 Agustus 2026</strong></span>
+      <span>Versi <strong>1.2</strong></span>
+    </div>
+    <p>Science Universe adalah ruang belajar interaktif untuk materi TKA MIPA — Matematika, Fisika, Kimia, dan Biologi. Di halaman utama kamu bisa mengenal cabang ilmu beserta tokoh kuncinya, sementara di halaman Materi tersedia ringkasan topik TKA yang bisa dibaca bertahap.</p>
+    <p>Ada juga <strong>Mini Game</strong> yang membuat proses belajar lebih seru lewat level, skill points, dan kuis singkat bertema MIPA.</p>
+    <p>Halaman ini masih dalam tahap pengembangan. Beberapa fitur, termasuk kuis dan game, terus dilengkapi dari waktu ke waktu.</p>
+
+    <div class="settings-block">
+      <h3>Tim</h3>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar"><img src="assets/profile-syifa.webp" alt="Syifa Syauqillah Ramadani"></div>
+          <div class="role">Pengembang</div>
+          <h4>Syifa Syauqillah Ramadani</h4>
+          <p>Konsep, materi TKA, desain, dan pengembangan utama Science Universe.</p>
+        </div>
+        <div class="team-card contributor">
+          <div class="team-avatar"><img src="assets/contributor-alpin.png" alt="Alpin"></div>
+          <div class="role">Kontributor</div>
+          <h4>Alpin</h4>
+          <p>Kontribusi pada pengembangan fitur dan dukungan teknis.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="settings-block">
+      <h3>Sumber Materi</h3>
+      <ul class="source-links">
+        <li class="physics"><span class="tag">Fisika</span><a href="https://pin.it/3AO2GXrKe" target="_blank" rel="noopener noreferrer">Papan Pinterest — Fisika</a></li>
+        <li class="math"><span class="tag">Matematika</span><a href="https://pin.it/6fYJ53Suv" target="_blank" rel="noopener noreferrer">Papan Pinterest — Matematika</a></li>
+        <li class="indo"><span class="tag">B. Indo</span><a href="https://pin.it/2Zdfy7y2J" target="_blank" rel="noopener noreferrer">Papan Pinterest — Bahasa Indonesia</a></li>
+        <li class="english"><span class="tag">B. Inggris</span><a href="https://pin.it/2qejnm8Nv" target="_blank" rel="noopener noreferrer">Papan Pinterest — Bahasa Inggris</a></li>
+        <li class="math"><span class="tag">Mtk Wajib</span><a href="https://pin.it/1FMbKeZub" target="_blank" rel="noopener noreferrer">Papan Pinterest — Matematika Wajib</a></li>
+      </ul>
+      <p class="asset-note">Ringkasan materi, ilustrasi rumus, dan referensi visual pada tiap topik di halaman ini disusun dengan mengacu pada koleksi papan Pinterest di atas.</p>
+
+      <h3 style="margin-top:1.4rem">Asset Visual (Home)</h3>
+      <ul class="source-links">
+        <li class="math"><span class="tag">Matematika</span><a href="https://pin.it/6u0NFsGrx" target="_blank" rel="noopener noreferrer">Asset ilustrasi Matematika</a></li>
+        <li class="physics"><span class="tag">Fisika</span><a href="https://pin.it/2Jfuq2rcB" target="_blank" rel="noopener noreferrer">Asset ilustrasi Fisika</a></li>
+        <li class="indo"><span class="tag">Kimia</span><a href="https://pin.it/1vSy22J48" target="_blank" rel="noopener noreferrer">Asset ilustrasi Kimia</a></li>
+        <li class="english"><span class="tag">Biologi</span><a href="https://pin.it/7bLDNEDai" target="_blank" rel="noopener noreferrer">Asset ilustrasi Biologi</a></li>
+      </ul>
+      <p class="asset-note">Gambar specimen di halaman Home diambil dari pin Pinterest di atas.</p>
+    </div>
+
+    <div class="settings-block" style="margin-top:1.2rem">
+      <h3>Teknologi &amp; Kode</h3>
+      <ul class="source-links">
+        <li class="math"><span class="tag">HTML</span><span style="color:var(--chalk);font-size:.9rem;font-weight:500">Struktur halaman single-file (semantic sections, navigasi, materi reader)</span></li>
+        <li class="physics"><span class="tag">CSS</span><span style="color:var(--chalk);font-size:.9rem;font-weight:500">Layout, animasi, carousel 3D, tema Cosmic &amp; Pink lewat CSS variables</span></li>
+        <li class="indo"><span class="tag">JavaScript</span><span style="color:var(--chalk);font-size:.9rem;font-weight:500">Routing halaman, carousel Materi, catatan (localStorage), starfield canvas</span></li>
+        <li class="english"><span class="tag">Font</span><span style="color:var(--chalk);font-size:.9rem;font-weight:500">Google Fonts — Space Grotesk, Literata, JetBrains Mono</span></li>
+      </ul>
+      <p class="asset-note" style="margin-top:.9rem">Tema diatur dengan atribut <code style="font-family:var(--mono);font-size:.78em;color:var(--gold)">data-theme</code> pada <code style="font-family:var(--mono);font-size:.78em;color:var(--gold)">&lt;body&gt;</code> dan disimpan di <code style="font-family:var(--mono);font-size:.78em;color:var(--gold)">localStorage</code>. Catatan materi juga memakai localStorage per topik. Tidak memakai framework — murni HTML, CSS, dan JavaScript vanilla.</p>
+    </div>
+  </div>
+</div><!-- /page-about -->
+
+<!-- ================= PAGE: SETTINGS ================= -->
+<div class="page" id="page-settings">
+  <div class="simple-page">
+    <p class="eyebrow">Pengaturan</p>
+    <h2>Setting</h2>
+
+    <div class="settings-block">
+      <h3>Tema</h3>
+      <div class="theme-options" id="themeOptions">
+        <button class="theme-swatch selected" data-theme="cosmic">
+          <span class="swatch-preview cosmic"></span>
+          <span>Cosmic</span>
+        </button>
+        <button class="theme-swatch" data-theme="pink">
+          <span class="swatch-preview pink"></span>
+          <span>Pink &amp; Putih</span>
+        </button>
+        <button class="theme-swatch" data-theme="lavender">
+          <span class="swatch-preview lavender"></span>
+          <span>Soft Lavender</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="settings-block">
+      <h3>Notifikasi</h3>
+      <div class="notif-row">
+        <p>Pengingat daily challenge.</p>
+        <button type="button" class="btn ghost" id="notifEnableBtn">Aktifkan</button>
+      </div>
+      <p class="asset-note" id="notifStatus" style="margin-top:.6rem"></p>
+    </div>
+    <div class="settings-block">
+      <h3>Bookmark topik</h3>
+      <div id="bookmarkListWrap">
+        <div class="history-empty" id="bookmarkEmpty">Belum ada topik yang ditandai.</div>
+        <ul class="bookmark-list" id="bookmarkList" style="display:none"></ul>
+      </div>
+    </div>
+
+    <div class="settings-block">
+      <h3>Export catatan</h3>
+      <p style="color:var(--chalk-dim);font-size:.85rem;margin:0 0 .7rem;line-height:1.6">Salin semua catatan materi ke clipboard, atau unduh sebagai file teks.</p>
+      <div class="export-actions">
+        <button type="button" class="btn" id="exportCopyBtn">Salin ke clipboard</button>
+        <button type="button" class="btn ghost" id="exportDownloadBtn">Unduh .txt</button>
+      </div>
+      <p class="asset-note" id="exportStatus" style="margin-top:.6rem"></p>
+    </div>
+
+    <div class="settings-block">
+      <h3>Lainnya</h3>
+      <button class="btn ghost" id="resetAllBtn">Reset pengaturan &amp; progres</button>
+    </div>
+  </div>
+</div><!-- /page-settings -->
+
+<div class="quiz-overlay" id="quizOverlay" aria-hidden="true">
+  <div class="quiz-panel" role="dialog" aria-labelledby="quizTitle">
+    <h3 id="quizTitle">Kuis</h3>
+    <div class="quiz-meta" id="quizMeta">Soal 1 / 5</div>
+    <div class="quiz-q" id="quizQ"></div>
+    <div class="quiz-opts" id="quizOpts"></div>
+    <div class="quiz-feedback" id="quizFeedback"></div>
+    <div class="quiz-actions">
+      <button type="button" class="btn" id="quizNext" style="display:none">Lanjut</button>
+      <button type="button" class="btn ghost" id="quizClose">Tutup</button>
+    </div>
+  </div>
+</div>
+
+<div class="levelup-overlay" id="levelupOverlay" aria-hidden="true">
+  <div class="levelup-particles" id="levelupParticles"></div>
+  <div class="levelup-card">
+    <div class="lu-label">Level Up</div>
+    <div class="lu-level" id="levelupNumber">2</div>
+    <div class="lu-sub" id="levelupSub">Kamu naik level. Pertahankan streak-nya!</div>
+    <button type="button" class="btn" id="levelupClose">Lanjut</button>
+  </div>
+</div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
